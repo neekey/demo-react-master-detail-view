@@ -1,10 +1,6 @@
-# react-webpack-spa
-A demo for building a SPA using React and build with webpack.
+# Demo for Master-Detail Layout created with React
 
-[Demo](http://neekey.github.io/react-webpack-spa/build/)
-
-- [CSS Module](https://github.com/webpack/css-loader#local-scope)
-- [mocha-webpack](https://github.com/zinserjan/mocha-webpack)
+[Demo](https://react-master-default-neekey.c9users.io/)
 
 ### Usage
 
@@ -18,12 +14,6 @@ npm run build
 
 ```
 npm run dev
-```
-
-#### test
-
-```
-npm run test
 ```
 
 
