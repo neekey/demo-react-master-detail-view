@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  height: 50px;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 7px grey;
+}
+
+.left, .right {
+  width: 70px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}

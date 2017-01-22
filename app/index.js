@@ -42,13 +42,13 @@ const rootRoute = {
   path: '/',
   component: Main,
   indexRoute: {
-    onEnter: (nextState, replace) => replace('/home'),
+    onEnter: (nextState, replace) => replace('/dashboard'),
   },
   childRoutes: [
     ...routes,
     {
       path: '*',
-      onEnter: (nextState, replace) => replace('/home'),
+      onEnter: (nextState, replace) => replace('/dashboard'),
     },
   ],
 };

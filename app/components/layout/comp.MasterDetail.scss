@@ -1,0 +1,22 @@
+.content {
+  display: flex;
+  padding: 10px;
+}
+
+.master {
+  width: 200px;
+  flex: none;
+}
+
+.detail {
+  padding: 0 10px;
+  flex: auto;
+  height: 400px;
+}
+
+
+@media (max-width: 840px) {
+  .master {
+    width: 100%;
+  }
+}
