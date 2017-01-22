@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const ROOT_DIR = path.resolve(__dirname);
 const SRC_DIR = path.resolve(__dirname, 'app');
 
-const BUILD_DIR = path.resolve(__dirname, 'build');
+const BUILD_DIR = path.resolve(__dirname, 'docs');
 const PLUGINS = [];
 const PAGE_ENTRIES = {
   index: path.resolve(SRC_DIR, 'index.js'),
