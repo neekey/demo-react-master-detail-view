@@ -14,7 +14,8 @@ import Store from './store';
 import routes from './routes';
 
 let history = useRouterHistory(createHistory)({
-  basename: `${document.location.protocol}//${document.location.host}`,
+  basename:
+    `${document.location.protocol}//${document.location.host}/demo-react-master-detail-view/`,
 });
 
 Store.addReducers({

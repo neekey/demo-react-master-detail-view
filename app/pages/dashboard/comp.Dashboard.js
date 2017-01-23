@@ -67,6 +67,7 @@ export default class Dashboard extends React.Component {
     return (<MasterDetail
       masterToDetailLabel="Done"
       mobileHeaderTile="Dashboard"
+      detailViewTitle="View"
       masterView={masterView}
       detailView={detailView} />);
   }

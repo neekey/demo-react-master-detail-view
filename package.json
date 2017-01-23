@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production node ./node_modules/webpack/bin/webpack --config webpack.config.js",
+    "build": "NODE_ENV=production SITE_CDN_BASE=/demo-react-master-detail-view/ node ./node_modules/webpack/bin/webpack --config webpack.config.js",
     "dev": "NODE_ENV=development node ./node_modules/webpack-dev-server/bin/webpack-dev-server --host 0.0.0.0 --progress --colors --hot --inline --content-base=build  --history-api-fallback",
     "test": "./node_modules/.bin/mocha-webpack --opts ./test/mocha-webpack.opts --watch",
     "test:browser": "NODE_ENV=development node ./node_modules/webpack-dev-server/bin/webpack-dev-server --host 0.0.0.0 --devtool eval --config test/webpack.config.test.browser.js --progress --colors --hot --inline --content-base test  --history-api-fallback"

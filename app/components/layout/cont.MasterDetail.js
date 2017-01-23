@@ -4,7 +4,7 @@ import MasterDetail from './comp.MasterDetail';
 
 function MasterDetailContainer(props) {
   const {
-    viewType,
+    viewTypeOnMobile,
     masterToDetailLabel,
     detailToMasterLabel,
     pathname,
@@ -12,22 +12,22 @@ function MasterDetailContainer(props) {
     masterViewTitle,
     ...rest,
   } = props;
-  const isMaster = viewType === 'master';
+  const isMaster = viewTypeOnMobile === 'master';
   const mobileLeftLabel = isMaster ? null : detailToMasterLabel;
-  const mobileLeftLink = isMaster ? null : `${pathname}?viewType=master`;
+  const mobileLeftLink = isMaster ? null : `${pathname}?viewTypeOnMobile=master`;
   const mobileHeaderTile = isMaster ? masterViewTitle : detailViewTitle;
   let mobileRightLabel = null;
   let mobileRightLink = null;
 
   if (isMaster && masterToDetailLabel) {
     mobileRightLabel = masterToDetailLabel;
-    mobileRightLink = `${pathname}?viewType=detail`;
+    mobileRightLink = `${pathname}?viewTypeOnMobile=detail`;
   }
 
   return (<MasterDetail
     {...rest}
     mobileHeaderTile={mobileHeaderTile}
-    viewTypeOnMobile={viewType}
+    viewTypeOnMobile={viewTypeOnMobile}
     mobileRightLink={mobileRightLink}
     mobileRightLabel={mobileRightLabel}
     mobileLeftLink={mobileLeftLink}
@@ -39,7 +39,7 @@ MasterDetailContainer.propTypes = {
   detailView: React.PropTypes.element,
   masterViewTitle: React.PropTypes.string,
   detailViewTitle: React.PropTypes.string,
-  viewType: React.PropTypes.oneOf(['master', 'detail']),
+  viewTypeOnMobile: React.PropTypes.oneOf(['master', 'detail']),
   masterToDetailLabel: React.PropTypes.string,
   detailToMasterLabel: React.PropTypes.string,
   pathname: React.PropTypes.string,
@@ -47,14 +47,14 @@ MasterDetailContainer.propTypes = {
 
 MasterDetailContainer.defaultProps = {
   detailToMasterLabel: 'Back',
-  viewType: 'detail',
+  viewTypeOnMobile: 'detail',
 };
 
 function mapStateToProps(state) {
-  const viewType = state.routing.locationBeforeTransitions.query.viewType;
+  const viewTypeOnMobile = state.routing.locationBeforeTransitions.query.viewTypeOnMobile;
   const pathname = state.routing.locationBeforeTransitions.pathname;
   return {
-    viewType,
+    viewTypeOnMobile,
     mobile: state.browser.lessThan.tablet,
     pathname,
   };
