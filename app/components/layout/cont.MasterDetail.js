@@ -3,10 +3,19 @@ import { connect } from 'react-redux';
 import MasterDetail from './comp.MasterDetail';
 
 function MasterDetailContainer(props) {
-  const { viewType, masterToDetailLabel, detailToMasterLabel, pathname, ...rest } = props;
+  const {
+    viewType,
+    masterToDetailLabel,
+    detailToMasterLabel,
+    pathname,
+    detailViewTitle,
+    masterViewTitle,
+    ...rest,
+  } = props;
   const isMaster = viewType === 'master';
   const mobileLeftLabel = isMaster ? null : detailToMasterLabel;
   const mobileLeftLink = isMaster ? null : `${pathname}?viewType=master`;
+  const mobileHeaderTile = isMaster ? masterViewTitle : detailViewTitle;
   let mobileRightLabel = null;
   let mobileRightLink = null;
 
@@ -17,6 +26,7 @@ function MasterDetailContainer(props) {
 
   return (<MasterDetail
     {...rest}
+    mobileHeaderTile={mobileHeaderTile}
     viewTypeOnMobile={viewType}
     mobileRightLink={mobileRightLink}
     mobileRightLabel={mobileRightLabel}
@@ -27,6 +37,8 @@ function MasterDetailContainer(props) {
 MasterDetailContainer.propTypes = {
   masterView: React.PropTypes.element,
   detailView: React.PropTypes.element,
+  masterViewTitle: React.PropTypes.string,
+  detailViewTitle: React.PropTypes.string,
   viewType: React.PropTypes.oneOf(['master', 'detail']),
   masterToDetailLabel: React.PropTypes.string,
   detailToMasterLabel: React.PropTypes.string,

@@ -7,6 +7,8 @@
   padding: 10px;
   box-sizing: border-box;
   box-shadow: 1px 1px 7px grey;
+  position: relative;
+  z-index: 10;
 }
 
 .left, .right {
