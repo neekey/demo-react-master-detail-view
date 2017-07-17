@@ -10,8 +10,7 @@ function MasterDetailContainer(props) {
     pathname,
     detailViewTitle,
     masterViewTitle,
-    ...rest,
-  } = props;
+    ...rest } = props;
   const isMaster = viewTypeOnMobile === 'master';
   const mobileLeftLabel = isMaster ? null : detailToMasterLabel;
   const mobileLeftLink = isMaster ? null : `${pathname}?viewTypeOnMobile=master`;
